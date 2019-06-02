@@ -1,1 +1,4 @@
 .DS_Store
+assignments/assignment1/.ipynb_checkpoints/
+assignments/assignment1/data/
+*.pyc
