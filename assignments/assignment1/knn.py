@@ -116,10 +116,10 @@ class KNN:
         '''
         num_test = dists.shape[0]
         pred = np.zeros(num_test, np.bool)
-        for i in range(num_test):
+        pred = np.sum(self.train_y[np.argsort(dists, axis=1)][:, :self.k], axis=1)/self.k > 0.5
+        #for i in range(num_test):
             # TODO: Implement choosing best class based on k
             # nearest training samples
-            
             
         return pred
 
@@ -135,11 +135,16 @@ class KNN:
         pred, np array of int (num_test_samples) - predicted class index 
            for every test sample
         '''
+        #print('multiclass, baby')
         num_test = dists.shape[0]
         num_test = dists.shape[0]
         pred = np.zeros(num_test, np.int)
+        
+        candidates = self.train_y[np.argsort(dists, axis=1)][:, :self.k]
+        
         for i in range(num_test):
             # TODO: Implement choosing best class based on k
             # nearest training samples
-            pass
+            pred[i] = np.argmax(np.bincount(candidates[i, :]))
+            
         return pred
