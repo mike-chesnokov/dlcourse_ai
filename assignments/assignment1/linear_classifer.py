@@ -72,15 +72,16 @@ def softmax_with_cross_entropy(predictions, target_index):
     # Your final implementation shouldn't have any loops
     probs = softmax(predictions)
     loss = cross_entropy_loss(probs, target_index)
+    batch_size = probs.shape[0]
     
     if predictions.ndim > 1:
         dprediction = probs.copy()
-        dprediction[np.arange(probs.shape[0]), target_index.flatten()] -= 1
+        dprediction[np.arange(batch_size), target_index.flatten()] -= 1
     else:
         dprediction = probs.copy()
         dprediction[target_index] -= 1        
         
-    return loss, dprediction
+    return loss, dprediction/batch_size
 
 
 def l2_regularization(W, reg_strength):
