@@ -113,7 +113,10 @@ class Param:
 
     def __init__(self, value):
         self.value = value
-        self.grad = np.zeros_like(value)
+        self.clear_grad()
+        
+    def clear_grad(self):
+        self.grad = np.zeros_like(self.value)
 
 
 class ReLULayer:
