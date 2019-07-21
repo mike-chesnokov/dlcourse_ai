@@ -2,4 +2,5 @@
 *.ipynb_checkpoints/
 assignments/assignment1/data/
 assignments/assignment2/data/
+assignments/assignment3/data/
 *.pyc
