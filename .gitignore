@@ -4,3 +4,6 @@ assignments/assignment1/data/
 assignments/assignment2/data/
 assignments/assignment3/data/
 *.pyc
+assignments/assignment4/test*
+assignments/assignment4/train*
+
