@@ -6,4 +6,6 @@ assignments/assignment3/data/
 *.pyc
 assignments/assignment4/test*
 assignments/assignment4/train*
+assignments/assignment5/__MACOSX/
+assignments/assignment5/stanfordSentimentTreebank/
 
